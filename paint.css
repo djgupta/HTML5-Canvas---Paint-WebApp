@@ -1,0 +1,50 @@
+body{
+	background: #84C6D4;
+}
+
+#sidebar{
+	float: left;
+	margin-right:2px;
+	padding-right:2px;
+	border-right: 1px solid black;
+}
+#topbar{
+	
+	width:100%;
+	height:80px;
+	margin:2px;
+	border-bottom: 1px solid black;
+	padding:0px;
+}
+
+#topbar2{
+	width:600px;
+	height:40px;
+	margin:2px;
+	border: 1px solid black;
+	padding:0px;
+	display:none;	
+}
+
+#canvas{
+	float: left;
+	background: white;
+}
+
+.extra{
+	position:relative;
+	left:50px;
+}
+.tabs{
+	width:70px;
+	border: 1px solid black;
+	-webkit-box-shadow: 1px 1px 1px;
+	cursor: default;
+	
+}
+.selected{
+	border: 1px solid black;
+	-webkit-box-shadow: none;
+	cursor: default;
+	background:goldenrod;
+}

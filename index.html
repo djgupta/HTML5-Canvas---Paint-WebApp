@@ -1,0 +1,57 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title>Paint App</title>
+	<link rel="stylesheet" type="text/css" href="paint.css">
+</head>
+<body>
+	<div id="topbar">
+		
+	</div>
+	<div id="topbar2">
+		<input type="button" id="fill" value="Fill">
+		<select id="fillStyle">
+			<option value= "white" >None</option> 
+			<option value="goldenrod">glodenrod</option>
+			<option value='red' >red</option> 
+			<option value='green'>green</option> 
+			<option value='blue'>blue</option> 
+			<option value='orange' selected>orange</option> 
+			<option value='cornflowerblue' >cornflowerblue</option> 
+			<option value='navy'>navy</option> 
+			<option value='purple'>purple</option>
+		</select>
+		Delete:
+			<input type="button" id="delete" value="delete">
+	</div>
+	<div id="sidebar">
+		<p class="tabs" id="brush">Brush</p>
+		<p class="tabs" id="image">Image</p>
+		<p class="tabs" id="lines">Lines</p>
+		<p class="tabs" id="circle">Circle</p>
+		<p class="tabs" id="polygon">Polygon</p>
+		<p class="tabs" id="edit">Edit</p>
+		<p class="tabs" id="eraser">Eraser</p>	
+		<p class="tabs" id="clear">Clear</p>
+
+		<select id="strokeStyle" class="tabs">
+			<option value="white">None</option> 
+			<option value="goldenrod" selected>glodenrod</option>
+			<option value='red'>red</option> 
+			<option value='green'>green</option> 
+			<option value='blue'>blue</option> 
+			<option value='orange'>orange</option> 
+			<option value='cornflowerblue' >cornflowerblue</option> 
+			<option value='navy'>navy</option> 
+			<option value='purple'>purple</option>
+		</select>
+		<br>
+		<br>
+		<input class="tabs" type="number" id="lineWidth" value="4" max="72" min = "1">
+	</div>
+
+
+	<canvas id="canvas" width="500" height="500"></canvas>
+	<script src='paint.js'></script>
+</body>
+</html>
