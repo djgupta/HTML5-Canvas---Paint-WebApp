@@ -1,13 +1,11 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Paint App</title>
+	<title>Paint</title>
 	<link rel="stylesheet" type="text/css" href="paint.css">
 </head>
 <body>
-	<div id="topbar">
-		
-	</div>
+	<h1 id="topbar" style="text-align: center">Paint App</h1>
 	<div id="topbar2">
 		<input type="button" id="fill" value="Fill">
 		<select id="fillStyle">
@@ -26,14 +24,12 @@
 	</div>
 	<div id="sidebar">
 		<p class="tabs" id="brush">Brush</p>
-		<p class="tabs" id="image">Image</p>
 		<p class="tabs" id="lines">Lines</p>
 		<p class="tabs" id="circle">Circle</p>
 		<p class="tabs" id="polygon">Polygon</p>
 		<p class="tabs" id="edit">Edit</p>
 		<p class="tabs" id="eraser">Eraser</p>	
 		<p class="tabs" id="clear">Clear</p>
-
 		<select id="strokeStyle" class="tabs">
 			<option value="white">None</option> 
 			<option value="goldenrod" selected>glodenrod</option>
@@ -47,11 +43,14 @@
 		</select>
 		<br>
 		<br>
-		<input class="tabs" type="number" id="lineWidth" value="4" max="72" min = "1">
+        <input class="tabs" type="number" id="lineWidth" value="4" max="72" min = "1">
+        <br>
+        <br>
+        <input class="tabs" style="display:None" type="number" id="polygonSides" value="5" max="20" min = "3">
 	</div>
 
 
-	<canvas id="canvas" width="500" height="500"></canvas>
+	<canvas id="canvas" width="800" height="600"></canvas>
 	<script src='paint.js'></script>
 </body>
 </html>

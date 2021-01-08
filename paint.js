@@ -8,29 +8,30 @@ for(var i=0;i<columns.length;i++)
 	columns[i].addEventListener("click", main);
 }
 
-
 function main(){
 	var counter = this.id;
-	
 	var columns = document.querySelectorAll("p");
 	for(var i=0;i<columns.length;i++)
 	{
-		var id = document.getElementById(columns[i].id);
+        var id = document.getElementById(columns[i].id);
 		id.className ="tabs";
 	}
-
+    
 	var id = document.getElementById(counter);
 	id.className = "selected";
 	
 	var topbar2 = document.getElementById('topbar2');
 	topbar2.style.display = 'none';
-
+    
 	var topbar = document.getElementById('topbar');
 	topbar.style.height = "80px";
-
+    
 	var fill = document.getElementById('fill');
-	var deleteShape = document.getElementById('delete');
-
+    var deleteShape = document.getElementById('delete');
+    
+    var polygonSides = document.getElementById('polygonSides');
+    polygon_sides = polygonSides.value
+    polygonSides.style.display = "none";
 	var canvas = document.getElementById('canvas');
 	context = canvas.getContext('2d');
 		
@@ -56,16 +57,9 @@ function main(){
 	];
 
 	//drawGrid(context, 'grey','1',  10, 10);
-
-	if(counter == 'image'){
-		image.src="Cricket.png";
-		image.onload = function(e){
-		context.drawImage(image,0,0,image.width, image.height,0,0,canvas.width, canvas.height);
-		//filtering(context);
-		}
-		
-	}
-
+    if(counter == 'polygon'){
+        polygonSides.style.display = "block";
+    }
 	if(counter == 'clear'){
 		context.clearRect(0, 0, canvas.width, canvas.height);
 		shapenumber = 0;
@@ -112,7 +106,6 @@ function main(){
 	function loadImage(){
 		context.putImageData(imagery,0,0);
 	}
-
 
 	canvas.onmousedown = function(e){
 		saveImage();
@@ -180,7 +173,7 @@ function main(){
 					eraser(context, 'white','10',loc, pos, counter);
 				}
 				else if(counter == 'polygon'){
-					var object = new construct(context, 6 , context.strokeStyle, context.fillStyle, context.lineWidth,loc, pos, counter);
+					var object = new construct(context, polygon_sides , context.strokeStyle, context.fillStyle, context.lineWidth,loc, pos, counter);
 					object.creation();
 					shapes.push(object);
 				}
@@ -206,6 +199,10 @@ function main(){
 
 	lineWidth.onchange = function(e){
 		context.lineWidth = lineWidth.value;
+    };
+    
+    polygonSides.onchange = function(e){
+		polygon_sides = polygonSides.value;
 	};
 
 	fillStyle.onchange = function(e){
